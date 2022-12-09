@@ -1,26 +1,28 @@
 package steps;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import pages.loginPage;
-import utils.commonMethods;
-import utils.configReader;
+import io.cucumber.java.en.*;
 
-public class loginSteps extends commonMethods {
+public class loginSteps {
 
-
-    @When("user enters valid admin username and password")
-    public void user_enters_valid_admin_username_and_password() {
-     login.usernameTextField.sendKeys( configReader.getPropertyValue("username"));
-     login.passwordTextField.sendKeys( configReader.getPropertyValue("password"));
+    @Given("User Navigates To the URL")
+    public void user_navigates_to_the_url() {
+        System.out.println("1");
     }
-    @When("user clicks on login button")
+    @When("User Enters The correct UserName {string}")
+    public void user_enters_the_correct_user_name(String username) {
+        System.out.println(username);
+    }
+    @When("User Enters The correct Password {string}")
+    public void user_enters_the_correct_password(String password) {
+        System.out.println(password);
+    }
+    @When("user clicks On login button")
     public void user_clicks_on_login_button() {
-        login.loginButton.click();
+        System.out.println("4");
     }
-    @Then("admin user is successfully logged in and see the message {string}")
-    public void admin_user_is_successfully_logged_in_and_see_the_message(String welcomeMessage) {
-        System.out.println(welcomeMessage);
+    @Then("user is logged in")
+    public void user_is_logged_in() {
+        System.out.println("5");
     }
+
 }
