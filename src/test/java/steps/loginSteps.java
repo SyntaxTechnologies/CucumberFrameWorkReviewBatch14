@@ -1,9 +1,13 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import pages.LoginPage;
 import utils.CommonMethods;
+
+import java.util.List;
+import java.util.Map;
 
 public class loginSteps extends CommonMethods {
 
@@ -40,6 +44,27 @@ public class loginSteps extends CommonMethods {
        Assert.assertEquals(error,errorMsg);
 
     }
+
+
+    @When("user adds the employee")
+    public void user_adds_the_employee(DataTable dataTable) {
+//        get the dataTable as Maps
+        List<Map<String, String>> employees = dataTable.asMaps();
+
+//        traverse through the list of maps
+        for(Map<String,String>employee:employees){
+             String Fname = employee.get("firstName");
+            String mname=employee.get("middleName");
+            String lname = employee.get("lastName");
+
+            System.out.println(Fname);
+            System.out.println(mname);
+            System.out.println(lname);
+
+        }
+
+    }
+
 
 
 }

@@ -12,3 +12,12 @@ Feature: Test The Login Functionality
      |username|password|error|
      |admin   | abracad|Invalid credentials|
      |li      | shiao  |Invalid credentials|
+
+
+
+     Scenario:
+       When user adds the employee
+         |firstName|middleName|lastName|
+         |zara    |MS        |camilullah|
+         |birgul  |MS        |ozgin     |
+         |alina   |MS        |bob       |
